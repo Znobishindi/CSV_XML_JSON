@@ -12,13 +12,17 @@ public class Main {
         String fileName = "data.csv";
         List<Employee> list = CsvToJson.parseCSV(columnMapping, fileName);
         String json = CrateJsonFile.listToJson(list);
-        CrateJsonFile.writeString(json,"data1.json");
+        CrateJsonFile.writeString(json, "data1.json");
 
 // Задание 2
         List<Employee> list1 = XmlToJson.parseXML("data.xml");
         String json1 = CrateJsonFile.listToJson(list1);
-        CrateJsonFile.writeString(json1,"data2.json");
-    }
+        CrateJsonFile.writeString(json1, "data2.json");
+
 // задание 3 пришлю позднее
+        String json2 = JsonRead.readString("new_data.json");
+        List<Employee> list2 = JsonRead.jsonToList(json2);
+        System.out.println(list2);
+    }
 }
 
